@@ -1,0 +1,912 @@
+
+/* ==========================================
+   VARIABLES GLOBALES
+========================================== */
+
+:root {
+    --primary-color: #574884;
+    --primary-hover: #46386D;
+    --secondary-color: #7566A3;
+    --lavender-color: #B6ACD0;
+    --porcelain-color: #EBEFF0;
+
+    --bg-light: #EBEFF0;
+    --text-light: #2E2A3B;
+
+    --bg-dark: #2E2A3B;
+    --text-dark: #FFFFFF;
+
+    --card-bg: #FFFFFF;
+    --border-color: #B6ACD0;
+
+    --transition: all 0.3s ease;
+}
+
+/* ==========================================
+   ESTILOS GENERALES
+========================================== */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+section {
+    scroll-margin-top: 70px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+button,
+a,
+input,
+textarea {
+    transition: var(--transition);
+}
+
+:focus-visible {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 4px;
+}
+
+/* ==========================================
+   COLORES BOOTSTRAP
+========================================== */
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.border-primary {
+    border-color: var(--primary-color) !important;
+}
+
+.bg-light {
+    background-color: var(--porcelain-color) !important;
+}
+
+.bg-dark {
+    background-color: var(--bg-dark) !important;
+}
+
+.text-danger {
+    color: var(--secondary-color) !important;
+}
+
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.navbar {
+    background-color: var(--primary-color) !important;
+
+    box-shadow: 0 2px 12px
+        rgba(46, 42, 59, 0.20);
+
+    transition: var(--transition);
+}
+
+.navbar-brand {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #FFFFFF !important;
+}
+
+.nav-link {
+    color: #FFFFFF !important;
+    font-weight: 500;
+    margin-left: 8px;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #EBEFF0 !important;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+#darkModeToggle {
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+}
+
+/* ==========================================
+   HOMEPAGE / HERO
+========================================== */
+
+.hero-section {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: #FFFFFF;
+
+    background: linear-gradient(
+        -45deg,
+        #574884,
+        #7566A3,
+        #9588BB,
+        #46386D
+    );
+
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+
+    padding: 110px 20px 50px;
+}
+
+.hero-content {
+    animation: fadeInUp 1.5s ease;
+}
+
+.profile-image {
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 5px solid #EBEFF0;
+
+    box-shadow: 0 8px 25px
+        rgba(46, 42, 59, 0.30);
+}
+
+.hero-section h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: #FFFFFF;
+}
+
+.hero-section h2 {
+    font-weight: 300;
+    color: #FFFFFF;
+}
+
+.hero-section p {
+    max-width: 750px;
+    margin: 0 auto;
+    color: #FFFFFF;
+}
+
+.hero-section .btn {
+    margin-top: 10px;
+
+    border-radius: 30px;
+    padding: 12px 25px;
+
+    font-weight: bold;
+}
+
+.hero-section .btn:hover {
+    transform: translateY(-4px);
+}
+
+/* ==========================================
+   BOTONES
+========================================== */
+
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #FFFFFF !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--primary-hover) !important;
+    border-color: var(--primary-hover) !important;
+    color: #FFFFFF !important;
+}
+
+.btn-outline-primary {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #FFFFFF !important;
+}
+
+.btn-light {
+    background-color: #EBEFF0;
+    border-color: #EBEFF0;
+    color: #2E2A3B;
+}
+
+.btn-light:hover {
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+    color: #574884;
+}
+
+/* ==========================================
+   TITULOS DE SECCIONES
+========================================== */
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    position: relative;
+
+    color: var(--primary-color);
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+
+    width: 75px;
+    height: 4px;
+
+    background-color: var(--secondary-color);
+
+    margin: 15px auto 0;
+    border-radius: 10px;
+}
+
+/* ==========================================
+   SOBRE MI
+========================================== */
+
+.about-card {
+    border-radius: 12px;
+
+    background-color: var(--card-bg);
+    color: var(--text-light);
+
+    border: 1px solid var(--border-color);
+
+    transition: var(--transition);
+}
+
+.about-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 10px 25px
+        rgba(87, 72, 132, 0.18);
+}
+
+.about-card i {
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.about-card:hover i {
+    transform: scale(1.15);
+}
+
+/* ==========================================
+   HABILIDADES
+========================================== */
+
+.progress {
+    height: 22px;
+    border-radius: 20px;
+
+    background-color: #DCD6E8;
+
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: var(--primary-color) !important;
+    color: #FFFFFF;
+
+    font-weight: bold;
+}
+
+/* ==========================================
+   PROYECTOS
+========================================== */
+
+.project-card {
+    background-color: var(--card-bg);
+    color: var(--text-light);
+
+    border: 2px solid var(--secondary-color);
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition: var(--transition);
+
+    animation: heartbeat 3s ease-in-out infinite;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+
+    box-shadow: 0 12px 30px
+        rgba(87, 72, 132, 0.22);
+
+    animation-play-state: paused;
+    z-index: 2;
+}
+
+.project-card .card-img-top {
+    height: 210px;
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.project-card .card-body {
+    padding: 22px;
+}
+
+.project-card .btn {
+    border-radius: 25px;
+}
+
+.project-card .badge {
+    margin: 2px;
+    font-size: 0.75rem;
+}
+
+.badge.bg-primary {
+    background-color: var(--secondary-color) !important;
+}
+
+/* ==========================================
+   EXPERIENCIA
+========================================== */
+
+.experience-card {
+    background-color: var(--card-bg);
+    color: var(--text-light);
+
+    border: 2px solid var(--secondary-color);
+    border-radius: 12px;
+
+    transition: var(--transition);
+}
+
+.experience-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 10px 25px
+        rgba(87, 72, 132, 0.18);
+}
+
+.experience-card ul {
+    padding-left: 22px;
+}
+
+.experience-card li {
+    margin-bottom: 5px;
+}
+
+/* ==========================================
+   CONTACTO
+========================================== */
+
+.contact-card {
+    background-color: var(--card-bg);
+    color: var(--text-light);
+
+    border-radius: 15px;
+    border: none;
+}
+
+.form-control {
+    padding: 12px;
+    border-radius: 8px;
+
+    background-color: #FFFFFF;
+    color: #2E2A3B;
+
+    border: 1px solid var(--border-color);
+}
+
+.form-control:focus {
+    background-color: #FFFFFF;
+    color: #2E2A3B;
+
+    border-color: var(--primary-color);
+
+    box-shadow: 0 0 0 0.2rem
+        rgba(87, 72, 132, 0.20);
+}
+
+.contact-card button {
+    padding: 12px;
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+/* ==========================================
+   REDES SOCIALES
+========================================== */
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.social-links a {
+    display: inline-block;
+    color: var(--primary-color);
+
+    transition: var(--transition);
+}
+
+.social-links a i {
+    color: var(--primary-color) !important;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-6px) scale(1.15);
+}
+
+.social-links a:hover i {
+    color: var(--secondary-color) !important;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer,
+footer.bg-dark {
+    background-color: var(--bg-dark) !important;
+    color: #FFFFFF !important;
+}
+
+footer p {
+    color: #FFFFFF;
+}
+
+footer i,
+footer .text-danger {
+    color: var(--lavender-color) !important;
+}
+
+footer a {
+    color: #EBEFF0;
+}
+
+footer a:hover {
+    color: #B6ACD0;
+}
+
+/* ==========================================
+   MODO OSCURO
+========================================== */
+
+body.dark {
+    --bg-light: #242030;
+    --text-light: #F5F2FA;
+
+    --bg-dark: #242030;
+    --text-dark: #FFFFFF;
+
+    --card-bg: #352C46;
+    --border-color: #7566A3;
+
+    background-color: #242030;
+    color: #F5F2FA;
+}
+
+/* FONDOS */
+
+body.dark .bg-light,
+body.dark .bg-white {
+    background-color: #242030 !important;
+}
+
+/* TARJETAS */
+
+body.dark .card,
+body.dark .about-card,
+body.dark .project-card,
+body.dark .experience-card,
+body.dark .contact-card {
+    background-color: #352C46;
+    color: #FFFFFF;
+
+    border-color: #7566A3;
+}
+
+/* NAVBAR */
+
+body.dark .navbar {
+    background-color: #46386D !important;
+}
+
+body.dark .navbar-brand,
+body.dark .nav-link {
+    color: #FFFFFF !important;
+}
+
+/* TITULOS */
+
+body.dark .section-title {
+    color: #D1C5EF;
+}
+
+/* ICONOS */
+
+body.dark i {
+    color: #D1C5EF;
+}
+
+body.dark .social-links a i {
+    color: #D1C5EF !important;
+}
+
+body.dark .social-links a:hover i {
+    color: #FFFFFF !important;
+}
+
+/* TEXTOS BOOTSTRAP */
+
+body.dark .text-dark {
+    color: #FFFFFF !important;
+}
+
+body.dark .text-muted {
+    color: #D0CADB !important;
+}
+
+body.dark .text-primary {
+    color: #D1C5EF !important;
+}
+
+/* FORMULARIOS */
+
+body.dark .form-control {
+    background-color: #352C46;
+    color: #FFFFFF;
+
+    border-color: #7566A3;
+}
+
+body.dark .form-control::placeholder {
+    color: #D0CADB;
+}
+
+body.dark .form-control:focus {
+    background-color: #352C46;
+    color: #FFFFFF;
+
+    border-color: #B6ACD0;
+
+    box-shadow: 0 0 0 0.2rem
+        rgba(182, 172, 208, 0.25);
+}
+
+/* BARRAS DE HABILIDADES */
+
+body.dark .progress {
+    background-color: #514760;
+}
+
+body.dark .progress-bar {
+    background-color: #9588BB !important;
+}
+
+/* BOTONES */
+
+body.dark .btn-outline-light {
+    border-color: #EBEFF0;
+    color: #FFFFFF;
+}
+
+body.dark .btn-outline-primary {
+    color: #D1C5EF !important;
+    border-color: #D1C5EF !important;
+}
+
+body.dark .btn-outline-primary:hover {
+    background-color: #7566A3 !important;
+    border-color: #7566A3 !important;
+    color: #FFFFFF !important;
+}
+
+/* FOOTER OSCURO */
+
+body.dark footer,
+body.dark footer.bg-dark {
+    background-color: #1C1827 !important;
+}
+
+body.dark footer i,
+body.dark footer .text-danger {
+    color: #B6ACD0 !important;
+}
+
+/* ==========================================
+   ANIMACIONES
+========================================== */
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        min-height: 100vh;
+        padding-top: 120px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .project-card,
+    .experience-card {
+        margin-bottom: 10px;
+    }
+
+    .social-links {
+        gap: 22px;
+    }
+
+    .navbar-nav {
+        padding-top: 12px;
+    }
+
+    .nav-link {
+        padding: 8px 0;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero-section .btn {
+        display: block;
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .social-links {
+        gap: 18px;
+    }
+
+    .social-links i {
+        font-size: 1.7rem;
+    }
+}
+
+/* ==========================================
+   ACCESIBILIDAD
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .bg-secondary {
+        background-color: #7566A3 !important ;
+    }
+}
+
+/* ==========================================
+   NUEVAS LETRAS ELEGANTES DEL PORTAFOLIO
+========================================== */
+
+/* LETRA GENERAL DE TODA LA PÁGINA */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* TU NOMBRE EN LA PORTADA */
+
+.hero-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+/* ESTUDIANTE DE INFORMÁTICA */
+
+.hero-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+/* DESCRIPCIÓN DE LA PORTADA */
+
+.hero-section p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.9;
+}
+
+/* TITULOS: SOBRE MI, PROYECTOS, ETC. */
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* TITULOS DE LAS TARJETAS */
+
+.about-card h3,
+.about-card h4,
+.project-card h3,
+.experience-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* TU NOMBRE EN EL MENU */
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+}
+
+/* OPCIONES DEL MENU */
+
+.nav-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+/* BOTONES */
+
+.btn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* PARRAFOS Y TARJETAS */
+
+p,
+.card p {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* FORMULARIO */
+
+.form-control,
+.form-label {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* FOOTER */
+
+footer {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+}
+
+/* ADAPTACIÓN PARA CELULARES */
+
+@media (max-width: 480px) {
+
+    .hero-section h1 {
+        font-size: 2.2rem;
+        letter-spacing: 0;
+    }
+
+    .hero-section h2 {
+        letter-spacing: 1px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
